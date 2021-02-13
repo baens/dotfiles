@@ -1,0 +1,22 @@
+##location: ~/.zshrc
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_TMUX_AUTOSTART=true
+
+ZSH_THEME="robbyrussell"
+plugins=(git tmux autojump asdf git-open)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+export EDITOR=vim
+
+note-sync () {
+	pushd ~/notes
+	git add -A
+	git commit -m "sync $(date --utc +%FT%T)"
+	git push
+	popd
+}
+
+export PATH=$PATH:./node_modules/.bin
