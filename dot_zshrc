@@ -3,8 +3,14 @@ ZSH_THEME="robbyrussell"
 
 ZSH_TMUX_AUTOSTART=true
 
-plugins=(git tmux)
+plugins=(git tmux mise)
 
 source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/.bin
+
+source ~/.config/zsh/chezmoi-aliases.zsh
+
+for f in ~/.zshrc.*; do
+	[[ -f "$f" ]] && source "$f"
+done
