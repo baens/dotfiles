@@ -73,32 +73,37 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 set $x_switch exec --no-startup-id i3-wk-switch
-
-# switch to workspace
-bindsym $mod+1 $x_switch 1
-bindsym $mod+2 $x_switch 2
-bindsym $mod+3 $x_switch 3
-bindsym $mod+4 $x_switch 4
-bindsym $mod+5 $x_switch 5
-bindsym $mod+6 $x_switch 6
-bindsym $mod+7 $x_switch 7
-bindsym $mod+8 $x_switch 8
-bindsym $mod+9 $x_switch 9
-bindsym $mod+0 $x_switch 10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 9
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 0
+bindsym $mod+1 $x_switch $ws1
+bindsym $mod+2 $x_switch $ws2
+bindsym $mod+3 $x_switch $ws3
+bindsym $mod+4 $x_switch $ws4
+bindsym $mod+5 $x_switch $ws5
+bindsym $mod+6 $x_switch $ws6
+bindsym $mod+7 $x_switch $ws7
+bindsym $mod+8 $x_switch $ws8
+bindsym $mod+9 $x_switch $ws9
+bindsym $mod+0 $x_switch $ws10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
