@@ -74,7 +74,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $x_switch exec --no-startup-id python3 ~/.i3/i3-wk-switch/i3-wk-switch.py
+set $x_switch exec --no-startup-id i3-wk-switch
 
 # switch to workspace
 bindsym $mod+1 $x_switch 1
