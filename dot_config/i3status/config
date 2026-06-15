@@ -1,0 +1,35 @@
+general {
+    colors = true
+    interval = 5
+}
+
+order += "disk /"
+order += "memory"
+order += "tztime utc"
+order += "tztime week"
+order += "tztime mt"
+
+disk "/" {
+    format = "Disk: %avail"
+}
+
+memory {
+    format = "Mem: %available"
+    threshold_degraded = "1G"
+    threshold_critical = "200M"
+}
+
+tztime utc {
+    format = "UTC: %H:%M:%S"
+    timezone = "UTC"
+}
+
+tztime week {
+    format = "W%V"
+    timezone = "UTC"
+}
+
+tztime mt {
+    format = "MT: %Y-%m-%d %H:%M"
+    timezone = "America/Denver"
+}
