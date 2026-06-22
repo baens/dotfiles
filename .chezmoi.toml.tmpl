@@ -1,8 +1,11 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $types := list "vm" "desktop" -}}
+{{- $hosttype := promptChoiceOnce . "hosttype" "What type of host are you on" $types -}}
 
 # this is a test
 [data]
     email = {{ $email | quote }}
+    hosttype = {{ $hosttype | quote }}
 
 [git]
     autoCommit = true
