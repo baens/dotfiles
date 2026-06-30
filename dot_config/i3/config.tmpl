@@ -112,7 +112,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-{{ if eq .hosttype "desktop }}
+{{ if eq .hosttype "desktop" }}
 # Single multimon RDP window. Pin ws10 to DP-2 and make the window globally
 # fullscreen so it spans both outputs (the remote treats them as two monitors).
 workspace $ws10 output DP-2
