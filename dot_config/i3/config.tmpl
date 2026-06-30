@@ -112,6 +112,22 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+{{ if eq .hosttype "desktop }}
+# Single multimon RDP window. Pin ws10 to DP-2 and make the window globally
+# fullscreen so it spans both outputs (the remote treats them as two monitors).
+workspace $ws10 output DP-2
+for_window [class="rdp-multimon"] move to workspace $ws10, fullscreen global
+
+# Jump back to the RDP session: focus ws10 and re-assert global fullscreen on the
+# multimon window so it spans both outputs again (switching away drops it).
+# Use "enable" (not toggle) so it's idempotent if the window is already fullscreen.
+bindsym $mod+grave workspace $ws10; [class="rdp-multimon"] fullscreen enable global
+# Shift+grave: leave the RDP view and return to a normal two-output layout --
+# workspace 1 on DP-2 (left) and workspace 2 on DP-1 (right). Drop the multimon
+# window's global fullscreen first so both workspaces are visible.
+bindsym $mod+Shift+grave [class="rdp-multimon"] fullscreen disable global; focus output DP-1; workspace $ws2; focus output DP-2; workspace $ws1
+{{ end }}
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
