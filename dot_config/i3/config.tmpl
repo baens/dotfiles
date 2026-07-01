@@ -125,7 +125,7 @@ bindsym $mod+grave workspace $ws10; [class="rdp-multimon"] fullscreen enable glo
 # Shift+grave: leave the RDP view and return to a normal two-output layout --
 # workspace 1 on DP-2 (left) and workspace 2 on DP-1 (right). Drop the multimon
 # window's global fullscreen first so both workspaces are visible.
-bindsym $mod+Shift+grave [class="rdp-multimon"] fullscreen disable global; focus output DP-1; workspace $ws2; focus output DP-2; workspace $ws1
+bindsym $mod+Shift+grave [class="rdp-multimon"] focus output DP-1; workspace $ws2; focus output DP-2; workspace $ws1
 {{ end }}
 
 # resize window (you can also use the mouse for that)
